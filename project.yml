@@ -1,0 +1,19 @@
+project: "sample-contract"
+version: "0.1.0-rc1"
+libraries:
+   - name: "core"
+     lang: "C++"
+     options: "-O2"
+   - name: "something"
+     lang: "C"
+     options: "O0"
+    
+apps:
+   - name: "sample" 
+     lang: "C++"
+     depends:
+        - name: "core"
+        - name: "something"
+        - name: "test/test"
+          from: "https://github.com/larryk85/test"
+          
